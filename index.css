@@ -282,12 +282,7 @@ input:focus {
   transform: translateX(-250px);
  }
 
- .form {
-  top: 98%;
-  left: 70%;
-  width: 95%;
-  padding-bottom: 150px;
- }
+
 
 
 }
@@ -350,7 +345,7 @@ input:focus {
   top: 98%;
   left: 70%;
   width: 95%;
-  padding-bottom: 150px;
+  padding-bottom: 50px;
  }
 
  .d-flexs {
