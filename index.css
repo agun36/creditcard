@@ -312,6 +312,11 @@ input:focus {
   max-width: 300px;
  }
 
+ .date {
+
+  right: -5rem;
+
+ }
 
  .form {
   top: 90%;
