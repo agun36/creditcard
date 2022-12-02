@@ -143,6 +143,14 @@ btnform.addEventListener('click', (e) => {
   displayYear.innerHTML = year.value
   displayCvc.innerHTML = cvc.value
 })
+let media = window.matchMedia('(max-width: 700px)')
+media.addEventListener(myfunc)
+const myfunc = (media) => {
+  if (media.matches) {
+    form.style.position = 'absolute'
+    form.style.top = '8rem'
+  }
+}
 contbtn.addEventListener('click', (e) => {
   e.preventDefault()
 
