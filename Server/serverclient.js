@@ -113,12 +113,14 @@ const validateInputs = () => {
   } else {
     setSuccess(cvc, 'success')
   }
+
   // form.style.display = 'none'
 }
 
 btnform.addEventListener('click', (e) => {
   e.preventDefault()
   validateInputs()
+
   if (
     cardname.value &&
     cardnumber.value &&
