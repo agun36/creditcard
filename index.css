@@ -268,7 +268,10 @@ input:focus {
 @media screen and (max-width:767px) {
  .container-wrap {
   flex-direction: column;
+  overflow: hidden;
  }
+
+ body {}
 
  .left-section {
   min-height: 30vh;
