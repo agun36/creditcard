@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./index.css">
+  <title>Frontend Mentor | Interactive card details form</title>
+
+</head>
+
+<body>
+
+  <div>
+    <div class="row">
+      <div class='container-wrap'>
+
+        <div class='left-section'>
+          <div class='cards'>
+            <div class='front_card'>
+              <img class='front' src='./images/bg-card-front.png' alt='' />
+              <div class='card_container'>
+                <img class='card_logo' src='./images/card-logo.svg' alt='' />
+                <h1 class='number'>0000 0000 0000 0000</h1>
+                <div class='card_info'>
+                  <span id='name'>Jane Applesseed</span>
+                  <span id='date'>
+                    <span id='month'>00</span>/ <span id='year'>00</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class='back_card'>
+              <img class='back' src='./images/bg-card-back.png' alt='' />
+              <span class='cvc' id='cvc'>
+                000
+              </span>
+            </div>
+          </div>
+        </div>
+
+
+        <div class='right-section'>
+          <div class='right-section-folder'>
+            <Form class='form'>
+              <div class='input-control form-group'>
+                <label>CardHolder Name</label>
+                <input class="cardname" name="cardname" type="text" placeholder='Jane Applesseed'>
+                <small class="error">
+
+                </small>
+              </div>
+              <div class='input-control form-group'>
+                <label>CARDNUMBER</label>
+                <input type='text' class="cardnumber" name="cardnumber" placeholder="0000 0000 0000 0000" />
+                <small class="error">
+
+                </small>
+              </div>
+              <div class=''>
+                <div class='label-container'>
+                  <div class='label-group'>
+                    <span class='labels'> Exp.</span>
+                    <span class='labels2'> Date</span>
+                    <span>(MM/YY)</span>
+                  </div>
+                  <span>cvc</span>
+                </div>
+                <div class='d-flexs'>
+                  <div class='input-control  input1 ' controlId='month'>
+                    <input type='text' class='month' placeholder='MM'>
+                    <small class="error">
+
+                    </small>
+                  </div>
+                  <div class='input-control input2 ' controlId='year'>
+                    <input class='year' placeholder='YY'>
+                    <small class="error">
+
+                    </small>
+                  </div>
+                  <div class='input-control input3 '>
+                    <input class='cvcnum' placeholder='cvc'>
+                    <small class="error">
+
+                    </small>
+                  </div>
+                </div>
+              </div>
+              <div controlId='submit' class='flex-btn'>
+                <Button type='button' class='btn btnform'>
+                  Confirm
+                </Button>
+              </div>
+            </Form>
+
+            <div class='thank_you--message'>
+              <img src='./images/icon-complete.svg' alt=''>
+              <h3>THANK YOU !</h3>
+              <small>We've added your card details</small>
+
+              <button class='thankyou-btn'>
+                Continue
+              </button>
+            </div>
+
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="./Server/serverclient.js"></script>
+</body>
+
+</html>
