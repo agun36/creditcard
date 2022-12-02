@@ -249,6 +249,21 @@ input:focus {
  width: 17rem;
 }
 
+@media screen and (min-width:767px) {
+
+
+ .input1 {
+  width: 20%;
+ }
+
+ .input2 {
+  width: 20%;
+ }
+
+ .input2 {
+  width: 18%;
+ }
+}
 
 @media screen and(max-width:300px) {
 

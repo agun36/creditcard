@@ -38,14 +38,16 @@ const setError = (element, message) => {
 
   console.log(errorDisplay)
   errorDisplay.innerText = message
+  errorDisplay.style.color = 'red'
   inputControl.classList.add('error')
   inputControl.classList.remove('success')
 }
-const setSuccess = (element) => {
+const setSuccess = (element, message) => {
   const inputControl = element.parentElement
-  const errorDisplay = inputControl.querySelector('.error')
+  const successDisplay = inputControl.querySelector('.success')
 
-  errorDisplay.innerText = ''
+  successDisplay.innerText = message
+  successDisplay.style.color = 'green'
   inputControl.classList.add('success')
   inputControl.classList.remove('error')
 }
@@ -64,7 +66,7 @@ const validateInputs = () => {
   } else if (!regName.test(nameValue)) {
     setError(cardname, 'write in this format e.g. Agun Akindele')
   } else {
-    setSuccess(cardname)
+    setSuccess(cardname, 'success')
   }
   // number set error
 
@@ -75,7 +77,7 @@ const validateInputs = () => {
   } else if (numberValue.length < 16) {
     setError(cardnumber, 'card number is too short')
   } else {
-    setSuccess(cardnumber)
+    setSuccess(cardnumber, 'success')
   }
   // month set error
   if (!monthValue && monthValue === '') {
@@ -85,7 +87,7 @@ const validateInputs = () => {
   } else if (monthValue.length != 2) {
     setError(month, 'month  must be four digits number')
   } else {
-    setSuccess(month)
+    setSuccess(month, 'success')
   }
   // year set error
   let current_year = new Date().getFullYear()
@@ -99,7 +101,7 @@ const validateInputs = () => {
   } else if (yearValue.length != 2) {
     setError(year, 'card year must be 2 digits')
   } else {
-    setSuccess(year)
+    setSuccess(year, 'success')
   }
   // cvc set error
   if (!cvcValue && cvcValue === '') {
@@ -109,7 +111,7 @@ const validateInputs = () => {
   } else if (cvcValue.length != 3) {
     setError(cvc, 'cvc number is too short')
   } else {
-    setSuccess(cvc)
+    setSuccess(cvc, 'success')
   }
   // form.style.display = 'none'
 }
