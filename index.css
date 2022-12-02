@@ -284,6 +284,7 @@ input:focus {
  }
 
 
+
  .back_card {
   z-index: -12;
   max-width: -70px;
@@ -316,11 +317,11 @@ input:focus {
   top: 90%;
   left: 70%;
   width: 95%;
-  padding-bottom: 20px;
+  padding-bottom: 150px;
  }
 
  .d-flexs {
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   flex-direction: column;
  }
 
