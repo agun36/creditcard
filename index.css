@@ -72,13 +72,13 @@ body {
 .card_logo {
  position: absolute;
  top: 1rem;
- left: 2rem;
+ left: 1rem;
 }
 
 .number {
  position: absolute;
  bottom: 5rem;
- left: 2rem;
+ left: 1rem;
 
  font-size: 2rem;
  color: white;
@@ -87,7 +87,7 @@ body {
 .card_info {
  position: absolute;
  bottom: 2rem;
- left: 2rem;
+ left: 1rem;
  /* right: 3rem; */
  font-size: 1.3rem;
  color: white;
