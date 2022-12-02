@@ -10,6 +10,7 @@ const year = document.querySelector('.year')
 const cvc = document.querySelector('.cvcnum')
 const thankyou = document.querySelector('.thank_you--message')
 const contbtn = document.querySelector('.thankyou-btn')
+console.log(contbtn)
 const displayNumber = document.querySelector('.number')
 const displayName = document.querySelector('#name')
 const displayMonth = document.querySelector('#month')
@@ -143,22 +144,14 @@ btnform.addEventListener('click', (e) => {
   displayYear.innerHTML = year.value
   displayCvc.innerHTML = cvc.value
 })
-let media = window.matchMedia('(max-width: 700px)')
-media.addEventListener(myfunc)
-const myfunc = (media) => {
-  if (media.matches) {
-    form.style.position = 'absolute'
-    form.style.top = '8rem'
-  }
-}
+
 contbtn.addEventListener('click', (e) => {
   e.preventDefault()
-
   form.style.display = 'flex'
-  thankyou.style.display = 'none'
   cardname.value = ''
   cardnumber.value = ''
   month.value = ''
   year.value = ''
   cvc.value = ''
+  thankyou.style.display = 'none'
 })
