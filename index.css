@@ -22,6 +22,7 @@ button {
 
 
 
+
 body {
  min-height: 100vh;
  overflow-x: hidden;
@@ -63,29 +64,32 @@ body {
 
 .front_card {
  position: relative;
-
+ width: 100%;
+ max-width: 400px;
  transform: translateX(-100px);
 }
 
 .card_logo {
  position: absolute;
  top: 1rem;
- left: 1rem;
+ left: 2rem;
 }
 
 .number {
  position: absolute;
  bottom: 5rem;
- left: 1rem;
- letter-spacing: 3px;
+ left: 2rem;
+
+ font-size: 2rem;
  color: white;
 }
 
 .card_info {
  position: absolute;
  bottom: 2rem;
- left: 1rem;
+ left: 2rem;
  /* right: 3rem; */
+ font-size: 1.3rem;
  color: white;
 
 }
@@ -93,22 +97,26 @@ body {
 .date {
  position: absolute;
  right: -14rem;
+
 }
 
 .back_card {
  position: relative;
+ width: 100%;
+ max-width: 100%;
+ transform: translateX(40px);
+ background-image: url(./images//bg-card-back.png);
+ background-position: center center;
+ background-repeat: no-repeat;
+
 }
 
-.front {
- width: 100%;
- max-width: 400px;
- height: 100%;
-}
 
 .cvc {
  position: absolute;
  right: 3.5rem;
- top: 7rem;
+ top: 6.5rem;
+ font-size: 1.5rem;
  color: white;
 }
 
@@ -237,21 +245,21 @@ input:focus {
 
 @media screen and(max-width:300px) {
 
- .front {
-  width: 200px;
- }
 
- .back {
-  width: 200px;
- }
 
  .front_card {
-  transform: translateX(-6px);
+
+  top: 14%;
+  right: -45%;
+  transform: translateX(-50px);
  }
 
  .back_card {
-  transform: translateX(55px);
+  bottom: 15%;
+  right: 37%;
+  transform: translateX(-250px);
  }
+
 
 
 }
@@ -263,34 +271,41 @@ input:focus {
  }
 
  .left-section {
-  min-height: 50vh;
+  min-height: 30vh;
   background-color: aqua;
   position: absolute;
   left: 0;
   width: 100%;
  }
 
- .front_card {
-  bottom: 19%;
- }
 
  .back_card {
   z-index: -12;
+  max-width: -70px;
  }
 
+ .front {
+  max-width: 100%;
+  display: block;
+  height: auto;
+
+ }
+
+
  .cards {
-  bottom: -150%;
+  /* bottom: -150%; */
   left: 60%;
   flex-direction: column-reverse;
  }
 
  .front {
-  max-width: 100%;
+  max-width: 300px;
  }
 
  .back {
-  width: 350px;
+  max-width: 300px;
  }
+
 
  .form {
   top: 98%;
@@ -300,6 +315,7 @@ input:focus {
  }
 
  .d-flexs {
+  flex-wrap: wrap;
   flex-direction: column;
  }
 
@@ -320,16 +336,32 @@ input:focus {
  }
 
  .cvc {
-  top: 43%;
+  top: 37%;
+ }
+
+ .card_logo {
+  top: 7px;
+ }
+
+ .number {
+  font-size: 20px;
+  letter-spacing: 2;
  }
 
  .front_card {
-  transform: translateX(-50px);
+  top: 14%;
+
+  transform: translateX(-70px);
+
  }
 
  .back_card {
-  transform: translateX(-30px);
+  bottom: 15%;
+  /* right: 37%; */
+  transform: translate(-8px, 110px);
  }
+
+
 
  .thank_you--message {
   top: 60%;
