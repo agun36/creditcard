@@ -128,6 +128,13 @@ body {
 
 }
 
+label {
+ color: #21092F;
+ font-weight: 500;
+ font-size: 14px;
+ letter-spacing: 2;
+}
+
 .form {
  position: absolute;
  width: 40%;
