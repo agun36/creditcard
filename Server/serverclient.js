@@ -58,7 +58,7 @@ const validateInputs = () => {
   console.log(monthValue)
   const yearValue = year.value
   const cvcValue = cvc.value
-  // name set error
+
   let regName = /^[a-zA-Z]+ [a-zA-Z]+$/
 
   if (!nameValue && nameValue === '') {
