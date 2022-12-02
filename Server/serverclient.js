@@ -68,7 +68,7 @@ const validateInputs = () => {
   // number set error
 
   if (!numberValue && numberValue === '') {
-    setError(cardnumber, 'Card number is required')
+    setError(cardnumber, 'cant be empty')
   } else if (isNaN(numberValue)) {
     setError(cardnumber, 'card number is not a number')
   } else if (numberValue.length < 16) {
