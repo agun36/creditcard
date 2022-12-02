@@ -75,7 +75,7 @@ const validateInputs = () => {
   } else if (isNaN(numberValue)) {
     setError(cardnumber, 'card number is not a number')
   } else if (numberValue.length < 16) {
-    setError(cardnumber, 'card number is too short')
+    setError(cardnumber, 'card number must be 16')
   } else {
     setSuccess(cardnumber, 'success')
   }
