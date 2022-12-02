@@ -271,7 +271,9 @@ input:focus {
   overflow: hidden;
  }
 
- body {}
+ .row {
+  overflow: hidden;
+ }
 
  .left-section {
   min-height: 30vh;
