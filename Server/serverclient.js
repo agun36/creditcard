@@ -139,7 +139,9 @@ btnform.addEventListener('click', (e) => {
       ? month.focus()
       : year.value == ''
       ? year.focus()
-      : cvc.focus()
+      : cvc.value == ''
+      ? cvc.focus()
+      : form == ''
   }
   displayNumber.innerHTML = cardnumber.value
   displayNumber.style.display = 'flex'
