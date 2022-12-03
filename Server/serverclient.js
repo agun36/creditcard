@@ -60,7 +60,7 @@ const validateInputs = () => {
     numberValue.substring(0, 16)
     setError(cardnumber, 'cant be empty')
   } else if (!cardno.test(numberValue)) {
-    setError(cardnumber, 'card number must start with 55 and must be 16')
+    setError(cardnumber, 'card number must start with 5545... and must be 16')
   } else {
     setSuccess(cardnumber, 'success')
   }
