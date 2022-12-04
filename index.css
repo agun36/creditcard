@@ -79,7 +79,7 @@ body {
  position: absolute;
  bottom: 5rem;
  left: 1rem;
-
+ word-spacing: 9px;
  font-size: 2rem;
  color: white;
 }
