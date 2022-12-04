@@ -59,7 +59,7 @@ const setSuccess = (element, message) => {
   inputControl.classList.remove('error')
 }
 // input validation
-const validateInputs = () => {
+const isValid = () => {
   const nameValue = cardname.value
   const numberValue = cardnumber.value
   const monthValue = month.value
@@ -68,93 +68,85 @@ const validateInputs = () => {
 
   let regName = /^[a-zA-Z]+ [a-zA-Z]+$/
 
-  if (!nameValue && nameValue === '') {
+  if (!nameValue) {
     cardname.focus()
     setError(cardname, 'cant be empty')
+    return false
   } else if (!regName.test(nameValue)) {
     setError(cardname, 'write in this format e.g. Agun Akindele')
+    return false
   } else {
     setSuccess(cardname, 'success')
   }
   // number set error
   let cardno = /^(?:5[1-5][0-9]{14})$/
 
-  if (!numberValue && numberValue === '') {
+  if (!numberValue) {
     cardnumber.focus()
     setError(cardnumber, 'cant be empty ')
+    return false
   } else if (!cardno.test(numberValue)) {
     setError(cardnumber, 'card number must start with 5545... and must be 16')
+    return false
   } else {
     setSuccess(cardnumber, 'success')
   }
   // month set error
-  if (!monthValue && monthValue === '') {
+  if (!monthValue) {
     month.focus()
     setError(month, 'cant be empty ')
+    return false
   } else if (isNaN(monthValue)) {
     setError(month, 'card month must be a number')
+    return false
   } else if (monthValue.length != 2) {
     setError(month, 'month  must be  in this format 09')
+    return false
   } else {
     setSuccess(month, 'success')
   }
   // year set error
   let current_year = new Date().getFullYear()
-  if (!yearValue && yearValue === '') {
+  if (!yearValue) {
     year.focus()
     setError(year, 'cant be empty')
+    return false
   } else if (isNaN(yearValue)) {
     setError(year, 'card year must be a number')
+    return false
   } else if (year <= 2022 || year > current_year) {
     setError(year, 'card year must start from 2022')
+    return false
   } else if (yearValue.length != 2) {
     setError(year, 'card year must be 2 digits')
+    return false
   } else {
     setSuccess(year, 'success')
   }
   // cvc set error
-  if (!cvcValue && cvcValue === '') {
+  if (!cvcValue) {
     cvc.focus()
     setError(cvc, 'cant be empty')
+    return false
   } else if (isNaN(cvcValue)) {
     setError(cvc, 'cvc  is not a number')
+    return false
   } else if (cvcValue.length != 3) {
     setError(cvc, 'cvc length is too short')
+    return false
   } else {
     setSuccess(cvc, 'success')
   }
+  return true
 }
 // add eventlistener to confirm button
 btnform.addEventListener('click', (e) => {
   e.preventDefault()
-  validateInputs()
 
-  if (
-    cardname.value &&
-    cardnumber.value &&
-    month.value &&
-    year.value &&
-    cvc.value
-  ) {
+  if (isValid()) {
     form.style.display = 'none'
-    setTimeout(() => {
-      thankyou.style.display = 'flex'
-    }, 1000)
-  } else {
-    cardname.value === ''
-      ? cardname.focus()
-      : cardnumber.value === ''
-      ? cardnumber.focus()
-      : month.value === ''
-      ? month.focus()
-      : year.value === ''
-      ? year.focus()
-      : cvc.value === ''
-      ? cvc.focus()
-      : form === ''
+    thankyou.style.display = 'flex'
   }
-
-  displayNumber.style.display = 'flex'
 })
 // add eventlistener to success button
 contbtn.addEventListener('click', (e) => {
