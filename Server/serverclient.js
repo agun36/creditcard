@@ -113,7 +113,7 @@ const isValid = () => {
     setError(year, 'cant be empty')
     return false
   } else if (yearRegex.test(yearValue)) {
-    setError(year, 'card year must be a number')
+    setError(year, 'card year must start from 22')
     return false
   } else if (yearValue.length != 2) {
     setError(year, 'card year must be 2 digits')
