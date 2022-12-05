@@ -92,12 +92,13 @@ const isValid = () => {
     setSuccess(cardnumber, 'success')
   }
   // month set error
+  let monthRegex = /^(0?[1-9]|[12]\d|30)$/
   if (!monthValue) {
     month.focus()
     setError(month, 'cant be empty ')
     return false
-  } else if (isNaN(monthValue)) {
-    setError(month, 'card month must be a number')
+  } else if (!monthRegex.test(monthValue)) {
+    setError(month, 'card month must follow this pattern e.g.01,30')
     return false
   } else if (monthValue.length != 2) {
     setError(month, 'month  must be  in this format 09')
@@ -106,16 +107,13 @@ const isValid = () => {
     setSuccess(month, 'success')
   }
   // year set error
-  let current_year = new Date().getFullYear()
+  let yearRegex = /^(1\d|2[01])$/
   if (!yearValue) {
     year.focus()
     setError(year, 'cant be empty')
     return false
-  } else if (isNaN(yearValue)) {
+  } else if (yearRegex.test(yearValue)) {
     setError(year, 'card year must be a number')
-    return false
-  } else if (year <= 2022 || year > current_year) {
-    setError(year, 'card year must start from 2022')
     return false
   } else if (yearValue.length != 2) {
     setError(year, 'card year must be 2 digits')
